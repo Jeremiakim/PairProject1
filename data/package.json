@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Daily Cleaning",
+    "Price": 75000,
+    "Description": "Minimal Order 2 Jam\nCleaning Termasuk: Dapur, Ruang Tamu, Kamar Mandi, Dusting, Vakum, Langit-Langit, Kaca\nLuas Pengerjaan Per Jamnya Maksimal 30 Meter\nHarga di atas berlaku untuk 1 Mitra",
+    "Category": "General Cleaning"
+  },
+  {
+    "Name": "All In One",
+    "Price": 499000,
+    "Description": "Daily Cleaning 3 Jam\nHydrovacuum 2 Kasur atau 3 Sofa\nFree Hydrovacuum 2 Bantal",
+    "Category": "General Cleaning"
+  },
+  {
+    "Name": "Toilet Small",
+    "Price": 400000,
+    "Description": "Ukuran Toilet <4m2",
+    "Category": "Deep Cleaning Toilet"
+  },
+  {
+    "Name": "Toilet Small",
+    "Price": 400000,
+    "Description": "Ukuran Toilet <4m2",
+    "Category": "Deep Cleaning Toilet"
+  },
+  {
+    "Name": "Toilet Small",
+    "Price": 400000,
+    "Description": "Ukuran Toilet <4m2",
+    "Category": "Deep Cleaning Toilet"
+  }
+]
