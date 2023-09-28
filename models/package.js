@@ -10,14 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Package.hasMany(Model.PackageTransaction);
+      Package.hasMany(models.PackageTransaction);
     }
   }
   Package.init({
     name: DataTypes.STRING,
     description: DataTypes.TEXT,
     price: DataTypes.INTEGER,
-    category: DataTypes.STRING
+    category: DataTypes.STRING,
+    image : DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Package',

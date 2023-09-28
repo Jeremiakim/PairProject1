@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Home</title>
+    <style>
+        .notification-container {
+            margin-top: 2%;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Home page</h1>
+
+    <!-- NAVBAR -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" style="font-weight: bold;">Art Colection</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/arts/add">Add Art</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="/" method="GET">
+                        <input class="form-control me-2" type="text" placeholder="Search by title" aria-label="Search"
+                            name="keywordName">
+                        <input class="form-control me-2" type="text" placeholder="by artist" aria-label="Search"
+                            name="keywordArtist">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- DATA -->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <% data.forEach(el=>{ %>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="<%= el.image %>" class="img-fluid" style=" height: 250px;">
+                            <div class="card-body">
+                                <h5 class="heading">
+                                    <%= el.name %>
+                                </h5>
+                                <p class="card-text" style="max-height: 6em; line-height: 2em; 
+                            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                    <%= el.description %>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <!-- <a href="/arts/<%= el.id %>" class="btn btn-primary" role="button"
+                                            aria-pressed="true">See Detail</a>
+                                        <a href="/arts/<%= el.id %>/delete" class="btn btn-secondary" role="button"
+                                            aria-pressed="true">Delete</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
