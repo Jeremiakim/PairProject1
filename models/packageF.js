@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Package extends Model {
     static associate(models) {
@@ -11,10 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       if (position) {
         return Package.findAll({ where: { category: position } });
       }
-      return Package.findAll()
+      return Package.findAll();
     }
-  
-
+    calculateTotalPrice(quantity) {
+      return this.price * quantity;
+    }
   }
   Package.init({
     name: DataTypes.STRING,
