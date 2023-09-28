@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique : true
       },
       password: {
         type: Sequelize.STRING
@@ -29,6 +30,6 @@ module.exports = {
     });
   },
   down(queryInterface, Sequelize) {
-    queryInterface.dropTable('Users');
+    return queryInterface.dropTable('Users');
   }
 };

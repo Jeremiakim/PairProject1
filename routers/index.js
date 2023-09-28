@@ -7,7 +7,19 @@ const UserController = require('../controller/userController')
 //Pembuatan register
 
 router.get('/register', UserController.registerForm)
-router.post('/register')
+router.post('/register', UserController.postRegister)
+
+
+
+
+// Pembuatan Login
+router.get('/login', UserController.loginForm)
+router.post('/login', UserController.postLogin)
+
+
+
+
+router.get('/', UserController.homePage)
 
 
 
