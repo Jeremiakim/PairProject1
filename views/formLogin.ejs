@@ -72,15 +72,19 @@
 
 </head>
 <body>
+    <%- include("./_navBar") %>  
     <h1>Login</h1>
+    <% if (error) { %>
+        <h5 style="color: red;"><%= error %></h5>
+    <% } %>
     <form action="/login" method="POST">
         <div>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" autocomplete="off" required >
+            <input type="text" id="email" name="email" autocomplete="off"  >
         </div>
         <div>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" autocomplete="off" required>
+            <input type="password" id="password" name="password" autocomplete="off" >
         </div>
         <div>
             <button type="submit">Register</button>
@@ -88,7 +92,6 @@
     </form>
 </body>
 </html>
-
     </form>
 </body>
 </html>
