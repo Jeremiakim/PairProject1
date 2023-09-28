@@ -72,7 +72,11 @@
 
 </head>
 <body>
+    <%- include("./_navBar") %>  
     <h1>Login</h1>
+    <% if (error) { %>
+        <h5 style="color: red;"><%= error %></h5>
+    <% } %>
     <form action="/login" method="POST">
         <div>
             <label for="email">Email:</label>
@@ -88,7 +92,7 @@
     </form>
 </body>
 </html>
-
     </form>
 </body>
 </html>
+

@@ -21,7 +21,8 @@ class Controller {
 
   //! Show form --
   static showForm(req, res) {
-    res.render("showForm");
+    const errors = req.query.errors?.split(',')
+    res.render("showForm", {errors});
   }
   //! Add Package
   static addPackage(req, res) {
@@ -38,7 +39,14 @@ class Controller {
         res.redirect("/");
       })
       .catch((err) => {
-        res.send(err);
+        if (err.name === 'SequelizeValidationError') {
+          const errorMsg = err.errors.map((el)=>{
+            return el.message
+          })
+          res.redirect(`/package/add?errors=${errorMsg}`)
+        }else{
+          res.send(err)
+        }
       });
   }
   //! Show Package

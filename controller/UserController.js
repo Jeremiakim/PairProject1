@@ -1,3 +1,4 @@
+
 const { User } = require('../models')
 const bcryptjs = require('bcryptjs')
 
@@ -20,7 +21,8 @@ class UserController{
         })
     }
     static loginForm(req, res){
-        res.render("formLogin")
+        const {error} = req.query
+        res.render("formLogin", {error})
     }
     static postLogin(req, res){
         const {email, password} = req.body
@@ -28,12 +30,22 @@ class UserController{
             where : { email }
         })
         .then((user)=>{
-            const validatePassword = bcryptjs.compareSync(password, user.password)
-            if (validatePassword) {
-                return res.redirect('/')
+
+            if (user) {
+                const validatePassword = bcryptjs.compareSync(password, user.password)
+                if (validatePassword) {
+                    req.session.userId = user.id
+                    req.session.role = user.role
+                    return res.redirect('/')
+                }
+                else{
+                    const error = "Invalid Email/Password"
+                    return res.redirect(`/login?error=${error}`)
+                }                
             }
-            else{
-                return
+            else {
+                const error = "Invalid Email/Password"
+                return res.redirect(`/login?error=${error}`)
             }
         })
         .catch((err)=>{
@@ -42,6 +54,15 @@ class UserController{
     }
     static homePage(req, res){
         res.render('home')
+    }
+    static getLogOut(req, res){
+        req.session.destroy((err)=>{
+            if (err) {
+                res.send(err)
+            }else{
+                res.redirect('/login')
+            }
+        })
     }
 }
 
