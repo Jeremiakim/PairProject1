@@ -6,9 +6,8 @@ const router = require("express").Router();
 router.get("/", Controller.showHome);
 router.get("/package/add", Controller.showForm);
 router.post("/package/add", Controller.addPackage);
-// router.get("/stores/table/trx", Controller.showTable); //edit delete
-
-// router.post("/stores/table/trx", Controller.showForm);
+router.post("/package/transaction", Controller.addPackage);
+router.post("/package/add", Controller.addPackage);
 
 
 //Pembuatan register
