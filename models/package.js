@@ -12,6 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Package.hasMany(models.PackageTransaction);
     }
+    static getCategory(position) {
+      if (position) {
+        return Package.findAll({ where: { category: position } });
+      }
+      return Package.findAll()
+    }
+  
+
   }
   Package.init({
     name: DataTypes.STRING,
