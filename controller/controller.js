@@ -16,25 +16,25 @@ class Controller {
   }
   //show form
   static showForm(req, res) {
-    res.render("formPackage");
+    res.render("showForm");
   }
   //add paket
-  // static addPackage(req, res) {
-  //   const { name, description, price, category, image } = req.body;
-  //   Package.create({
-  //     name,
-  //     description,
-  //     price,
-  //     category,
-  //     image
-  //   })
-  //     .then((_) => {
-  //       res.redirect("/");
-  //     })
-  //     .catch((err) => {
-  //       res.send(err);
-  //     });
-  // }
+  static addPackage(req, res) {
+    const { name, description, price, category, image } = req.body;
+    Package.create({
+      name,
+      description,
+      price,
+      category,
+      image
+    })
+      .then((_) => {
+        res.redirect("/");
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  }
 }
 
 
