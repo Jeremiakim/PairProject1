@@ -1,4 +1,5 @@
 const {Package} = require("../models/");
+const { currencyFormatter } = require("../helper/index");
 
 
 class Controller {
@@ -9,8 +10,7 @@ class Controller {
     Package.getCategory(position)
     .then((data) => {
         // res.send(data)
-        console.log(data[0]);
-        res.render("home", { data });
+        res.render("home", { data, currencyFormatter });
       })
       .catch((err) => {
         res.send(err);
