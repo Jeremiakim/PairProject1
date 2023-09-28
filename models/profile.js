@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Profile.belongsTo(models.User);
+      
+
     }
   }
   Profile.init({
