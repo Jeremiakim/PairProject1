@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Transaction.belongsTo(models.Profile);
+      Transaction.hasMany(models.PackageTransaction);
     }
   }
   Transaction.init({

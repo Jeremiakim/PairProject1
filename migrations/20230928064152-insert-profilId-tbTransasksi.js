@@ -13,6 +13,6 @@ module.exports = {
  },
 
   down (queryInterface, Sequelize) {
-  queryInterface.dropTable("Transactions", "ProfileId",null);
+    return queryInterface.dropTable("Transactions", "ProfileId",null);
   }
 };
