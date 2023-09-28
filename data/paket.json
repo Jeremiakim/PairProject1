@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Daily Cleaning",
+    "price": 75000,
+    "description": "Minimal Order 2 Jam\nCleaning Termasuk: Dapur, Ruang Tamu, Kamar Mandi, Dusting, Vakum, Langit-Langit, Kaca\nLuas Pengerjaan Per Jamnya Maksimal 30 Meter\nHarga di atas berlaku untuk 1 Mitra",
+    "category": "General Cleaning",
+    "image": "https://citaindonesiabersih.com/wp-content/uploads/2023/04/General-Cleaning.jpg"
+  },
+  {
+    "name": "All In One",
+    "price": 499000,
+    "description": "Daily Cleaning 3 Jam\nHydrovacuum 2 Kasur atau 3 Sofa\nFree Hydrovacuum 2 Bantal",
+    "category": "General Cleaning",
+    "image": "https://citaindonesiabersih.com/wp-content/uploads/2023/04/General-Cleaning.jpg"
+  },
+  {
+    "name": "Toilet Small",
+    "price": 400000,
+    "description": "Ukuran Toilet <4m2",
+    "category": "Deep Cleaning Toilet",
+    "image": "https://citaindonesiabersih.com/wp-content/uploads/2023/04/General-Cleaning.jpg"
+
+  },
+  {
+    "name": "Toilet Small",
+    "price": 400000,
+    "description": "Ukuran Toilet <4m2",
+    "category": "Deep Cleaning Toilet",
+    "image": "https://citaindonesiabersih.com/wp-content/uploads/2023/04/General-Cleaning.jpg"
+  },
+  {
+    "name": "Toilet Small",
+    "price": 400000,
+    "description": "Ukuran Toilet <4m2",
+    "category": "Deep Cleaning Toilet",
+    "image": "https://citaindonesiabersih.com/wp-content/uploads/2023/04/General-Cleaning.jpg"
+  }
+]
