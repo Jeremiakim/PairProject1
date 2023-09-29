@@ -1,6 +1,7 @@
 
-const { User } = require('../models')
+const { User, Profile } = require('../models')
 const bcryptjs = require('bcryptjs')
+
 
 
 class UserController{
@@ -13,11 +14,32 @@ class UserController{
             email,
             password
         })
-        .then((_)=>{
-            res.redirect('/login')
+        .then((User)=>{
+            const userId = User.id
+            res.redirect(`/registerProfile?id=${userId}`)
         })
         .catch((err)=>{
             res.send(err)
+        })
+    }
+    static ProfilForm(req,res){
+        const userId = req.query.id
+        User.findByPk(userId)
+        .then((user)=>{
+            res.render("formProfile", {user})
+        })
+        .catch((err)=>{
+            res.send(err.message)
+        })
+    }
+    static postProfil(req,res){
+        const { name, address, phone, gender, UserId } = req.body
+        Profile.create({ name, address, phone, gender, UserId })
+        .then(()=>{
+            res.redirect('/login')
+        })
+        .catch((err)=>{
+            res.send(err.message)
         })
     }
     static loginForm(req, res){

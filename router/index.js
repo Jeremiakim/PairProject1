@@ -1,5 +1,6 @@
 const Controller = require("../controller/controller");
-const UserController = require("../controller/UserController");
+const UserController = require("../controller/userController");
+
 
 const router = require("express").Router();
 
@@ -7,6 +8,8 @@ const router = require("express").Router();
 
 router.get('/register', UserController.registerForm)
 router.post('/register', UserController.postRegister)
+router.get('/registerProfile', UserController.ProfilForm)
+router.post('/registerProfile', UserController.postProfil)
 
 
 // Pembuatan Login
